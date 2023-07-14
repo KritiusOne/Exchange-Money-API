@@ -1,13 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace Exchange_Money_API.Models
 {
-    public class DeudaEntity
+    public class DeudaModel
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
         public int User_id { get; set; }
         [ForeignKey("User_id")]
         public virtual UserEntity? Users { get; set; }

@@ -1,4 +1,6 @@
 using Exchange_Money_API.Data;
+using Exchange_Money_API.Models;
+using Exchange_Money_API.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 
@@ -14,9 +16,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ExchangeMoneyContext>(
     options =>
     {
-        options.UseSqlServer("name=ConnectionStrings:ExchangeMoneyConnection");
+        options.UseSqlServer(builder.Configuration.GetConnectionString("ExchangeMoneyConnection"));
     }
 );
+builder.Services.AddTransient<IService<UserEntity, UserModel>, UserService>();
+builder.Services.AddTransient<IService<RoleEntity, RoleModel>, RoleService>();
+
 
 var app = builder.Build();
 

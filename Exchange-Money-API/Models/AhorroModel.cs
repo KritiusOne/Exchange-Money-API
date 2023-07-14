@@ -1,16 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Exchange_Money_API.Models
 {
-    public class AhorroEntity
+    public class AhorroModel
     {
-        public AhorroEntity() { }
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-       
-        [Column(TypeName = "decimal(12,4)")]
         public decimal ValorAhorro { get; set; }
         public int Moneda_id { get; set; }
         [ForeignKey("Moneda_id")]

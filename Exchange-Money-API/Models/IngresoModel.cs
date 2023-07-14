@@ -1,14 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Exchange_Money_API.Models
 {
-    public class IngresoEntity
+    public class IngresoModel
     {
-        public IngresoEntity() { }
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //Lo hace autoincremental
-        public int Id { get; set; }
         public int User_id { get; set; }
         [ForeignKey("User_id")]
         public virtual UserEntity? Users { get; set; }

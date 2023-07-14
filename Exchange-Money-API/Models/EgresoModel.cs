@@ -1,15 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Exchange_Money_API.Models
 {
-    public class EgresoEntity
+    public class EgresoModel
     {
-        public EgresoEntity() { }
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        [StringLength(255)]
         public string Name { get; set; }
         //Llave foranea para el tipo del egreso
         public int Tipo_id { get; set; }
