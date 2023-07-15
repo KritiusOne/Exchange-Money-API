@@ -19,8 +19,19 @@ builder.Services.AddDbContext<ExchangeMoneyContext>(
         options.UseSqlServer(builder.Configuration.GetConnectionString("ExchangeMoneyConnection"));
     }
 );
-builder.Services.AddTransient<IService<UserEntity, UserModel>, UserService>();
+builder.Services.AddTransient<IService<EgresoEntity, EgresoModel>, EgresoService>();
+builder.Services.AddTransient<IService<IngresoEntity, IngresoModel>, IngresoService>();
+builder.Services.AddTransient<IService<DeudaEntity, DeudaModel>, DeudaService>();
+builder.Services.AddTransient<IService<AhorroEntity, AhorroModel>, AhorroService>();
+builder.Services.AddTransient<IService<AcreedorEntity, AcreedorModel>, AcreedorService>();
+builder.Services.AddTransient<IService<MonedaEntity, MonedaModel>, MonedaService>();
+builder.Services.AddTransient<IService<ObjetivoAhorroEntity, ObjetivoAhorroModel>, ObjetivoAhorroService>();
 builder.Services.AddTransient<IService<RoleEntity, RoleModel>, RoleService>();
+builder.Services.AddTransient<IService<SellersEntity,SellersModel>,  SellersService>();
+builder.Services.AddTransient<IService<TipoSellerEntity, TipoSellerModel>, TipoSellerService>();
+builder.Services.AddTransient<IService<TipoEntity, TipoModel>, TipoService>();
+builder.Services.AddTransient<IService<UserEntity, UserModel>, UserService>();
+
 
 
 var app = builder.Build();

@@ -25,5 +25,17 @@ namespace Exchange_Money_API.Controllers
             _service.Create(role);
             return Ok(role);
         }
+        [HttpPut("/role/{id}")]
+        public IActionResult UpdateRole(RoleModel role, int id)
+        {
+            _service.Update(role, id);
+            return Ok(role);
+        }
+        [HttpDelete("/role/{id}")]
+        public IActionResult DeleteRole(int id)
+        {
+            _service.Delete(id);
+            return Ok();
+        }
     }
 }
